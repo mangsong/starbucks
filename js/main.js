@@ -1,21 +1,4 @@
-const searchEl = document.querySelector('.search'); //도큐먼트는 html이라고보면됨.
-const searchInputEl = searchEl.querySelector('input'); //위에서 이미 찾은 서치안의 input 내용을 찾는거임
-
-searchEl.addEventListener('click', function(){
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () { //블러는 포커스가 해제된걸 의미한다
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
-
+// 메인.js에서 공통부분을 커먼.js로 이동했기 때문에 원래있었던 index.html파일에 커먼.js파일을 넣어줘야만 한다.
 //옆의 배지(이벤트)부분과 페이지상단으로이동하는 버튼의 애니메이션부분(나타나고 사라지고)
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -146,6 +129,3 @@ spyEls.forEach(function (spyEl) {
     .addTo(new ScrollMagic.Controller());
 });
 
-//년도를 바꿔주는 자바스크립트
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); //이번년도 숫자가 객체로 들어감
